@@ -74,6 +74,16 @@
         
         /* Floating WhatsApp */
         .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; }
+     /* Slider Styles */
+.hero-slider { position: relative; height: 80vh; overflow: hidden; }
+.slide { 
+    position: absolute; width: 100%; height: 100%; 
+    background-size: cover; background-position: center; 
+    display: flex; align-items: center; justify-content: center; 
+    opacity: 0; transition: opacity 1s ease-in-out; 
+}
+.slide.active { opacity: 1; z-index: 1; }
+.hero-content { text-align: center; color: white; z-index: 2; }   
     </style>
 </head>
 <body>
@@ -97,53 +107,26 @@
         </ul>
     </nav>
 </header>
-
-<section class="hero">
-    <div class="hero-content">
-        <h1>Global Partner for <br>Premium Commodities</h1>
-        <p>Leading Exporter of Organic Cardamom, Black Pepper, and Cashews from India.</p>
-        <a href="#products" class="btn-gold">VIEW PRODUCTS</a>
-    </div>
-</section>
-
-<section class="section">
-    <div class="about-row">
-        <div class="about-text">
-            <h2 style="color: var(--primary-color);">Your Trusted Partner in Global Trade</h2>
-            <p>PS EXIM TRADERS is a premier export company based in Kerala, the land of spices. We specialize in providing the highest grade agricultural products to international markets, ensuring quality control from farm to container.</p>
-            <p>With a focus on sustainability and direct sourcing, we bridge the gap between Indian farmers and global buyers.</p>
-            <a href="#" class="btn-gold" style="display:inline-block; margin-top:10px;">READ MORE</a>
-        </div>
-        <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1533613220915-609f661a6fe1?auto=format&fit=crop&w=800&q=80" alt="Spice Export">
+<section class="hero-slider">
+    <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-content">
+            <h1>Global Partner for <br>Premium Spices</h1>
+            <p>Direct Sourcing and Export Excellence from the Heart of Kerala.</p>
+            <a href="#products" class="btn-gold">VIEW PRODUCTS</a>
         </div>
     </div>
-</section>
-
-<section class="section" id="products" style="background: var(--light-gray);">
-    <div class="section-title">
-        <h2>OUR MAIN PRODUCTS</h2>
-        <p>Export Quality - Certified Organic</p>
+    <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-content">
+            <h1>Prime Agricultural <br>Exports</h1>
+            <p>Your Trusted Gateway for High-Grade Spice and Nut Procurement.</p>
+            <a href="#products" class="btn-gold">ENQUIRE NOW</a>
+        </div>
     </div>
-    
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="cashew.jpg" alt="Cashew Nuts">
-            <h3>CASHEW NUTS</h3>
-            <p style="padding: 10px;">Premium W320 & W240 Grades</p>
-            <a href="https://wa.me/91XXXXXXXX?text=Quote for Cashews" class="btn-enquire">ENQUIRE NOW</a>
-        </div>
-        <div class="product-card">
-            <img src="pepper.jpg" alt="Black Pepper">
-            <h3>BLACK PEPPER</h3>
-            <p style="padding: 10px;">Malabar Bold - High Piperine Content</p>
-            <a href="https://wa.me/91XXXXXXXX?text=Quote for Pepper" class="btn-enquire">ENQUIRE NOW</a>
-        </div>
-        <div class="product-card">
-            <img src="cardamom.jpg" alt="Green Cardamom">
-            <h3>GREEN CARDAMOM</h3>
-            <p style="padding: 10px;">8mm+ Export Quality Green Pods</p>
-            <a href="https://wa.me/91XXXXXXXX?text=Quote for Cardamom" class="btn-enquire">ENQUIRE NOW</a>
+    <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-content">
+            <h1>Quality Without <br>Compromise</h1>
+            <p>Exporting Premium Cardamom, Pepper, and Cashews Globally.</p>
+            <a href="#products" class="btn-gold">CONTACT US</a>
         </div>
     </div>
 </section>
@@ -173,6 +156,16 @@
 <a href="https://wa.me/91XXXXXXXX" class="whatsapp" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
+<script>
+    let slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+    setInterval(nextSlide, 5000); // This makes the images change every 5 seconds
+</script>
 
 </body>
 </html>
