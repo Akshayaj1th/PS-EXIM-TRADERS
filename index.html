@@ -3,116 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PS EXIM TRADERS | Premium Kerala Spices & Cashews</title>
+    <title>PS EXIM TRADERS | Premium Agricultural Exports</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Base Styles */
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; color: #333; line-height: 1.6; }
-        header { background: #fff; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2d5a27; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 26px; font-weight: 800; color: #2d5a27; letter-spacing: 1px; }
-        nav a { margin-left: 20px; text-decoration: none; color: #444; font-weight: 600; text-transform: uppercase; font-size: 14px; }
-        
-        /* Hero Section */
-        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1350&q=80'); 
-                height: 450px; background-size: cover; background-position: center; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero h1 { font-size: 52px; margin-bottom: 10px; text-transform: uppercase; }
-        .hero p { font-size: 20px; max-width: 600px; }
+        :root {
+            --primary-color: #1a4332; /* Vihaba Dark Green */
+            --accent-color: #c5a059;  /* Vihaba Gold */
+            --text-dark: #333;
+            --light-gray: #f4f4f4;
+        }
 
-        /* Product Section */
-        .container { padding: 60px 8%; background: #f9f9f9; }
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--text-dark); line-height: 1.6; }
+
+        /* Top Bar */
+        .top-bar { background: var(--primary-color); color: white; padding: 10px 10%; font-size: 13px; display: flex; justify-content: space-between; }
+        .top-bar a { color: white; text-decoration: none; margin-left: 15px; }
+
+        /* Navigation */
+        header { background: #fff; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary-color); text-transform: uppercase; }
+        .logo span { color: var(--accent-color); }
+        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 14px; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent-color); }
+
+        /* Hero Section */
+        .hero { 
+            height: 80vh; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1920&q=80'); 
+            background-size: cover; 
+            background-position: center;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white;
+        }
+        .hero-content h1 { font-size: 56px; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-content p { font-size: 20px; margin-bottom: 30px; font-weight: 300; }
+        .btn-gold { background: var(--accent-color); color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
+        .btn-gold:hover { background: #b08e4d; }
+
+        /* Section Styling */
+        .section { padding: 80px 10%; }
         .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 32px; color: #2d5a27; margin-bottom: 10px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        
-        /* Product Cards */
-        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; padding-bottom: 25px; border: 1px solid #eee; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 220px; object-fit: cover; }
-        .card h3 { margin: 20px 0 10px; font-size: 20px; color: #333; }
-        .card p { color: #666; font-size: 14px; padding: 0 20px; margin-bottom: 20px; }
-        
-        /* Enquire Button */
-        .btn-enquire { background: #fff; color: #2d5a27; border: 2px solid #2d5a27; padding: 10px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; display: inline-block; }
-        .btn-enquire:hover { background: #2d5a27; color: #fff; }
+        .section-title h2 { font-size: 36px; color: var(--primary-color); position: relative; padding-bottom: 15px; }
+        .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--accent-color); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        /* Product Grid */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .product-card { border: 1px solid #eee; overflow: hidden; transition: 0.3s; background: #fff; text-align: center; }
+        .product-card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .product-card img { width: 100%; height: 250px; object-fit: cover; }
+        .product-card h3 { padding: 20px 0 10px; font-size: 22px; color: var(--primary-color); }
+        .btn-enquire { display: block; width: 100%; padding: 15px 0; background: var(--primary-color); color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-enquire:hover { background: var(--accent-color); }
+
+        /* About / Export Focus */
+        .about-row { display: flex; align-items: center; gap: 50px; }
+        .about-text { flex: 1; }
+        .about-img { flex: 1; }
+        .about-img img { width: 100%; border-radius: 10px; }
 
         /* Footer */
-        footer { background: #1a3317; color: white; padding: 50px 8%; margin-top: 0; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .footer-logo { font-size: 22px; font-weight: bold; margin-bottom: 15px; display: block; }
+        footer { background: var(--primary-color); color: white; padding: 60px 10%; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
+        .footer-logo { font-size: 24px; font-weight: bold; margin-bottom: 20px; display: block; }
+        .footer-links a { color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; }
         
-        /* Floating WhatsApp Button */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+        /* Floating WhatsApp */
+        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; }
     </style>
 </head>
 <body>
 
-<a href="https://wa.me/91XXXXXXXXXX?text=I%20am%20interested%20in%20your%20spices" class="whatsapp-float" target="_blank">
-    <span>WP</span>
-</a>
+<div class="top-bar">
+    <div><i class="fas fa-envelope"></i> info@pseximtraders.com | <i class="fas fa-phone"></i> +91 91XXXXXXXX</div>
+    <div>
+        <a href="#">EN</a> | <a href="#">INR</a>
+    </div>
+</div>
 
 <header>
-    <div class="logo">PS EXIM TRADERS</div>
+    <div class="logo">PS EXIM <span>TRADERS</span></div>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Export Info</a>
-        <a href="#">Contact</a>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT US</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Premium Kerala Spices</h1>
-    <p>Exporter of Organic Cardamom, Bold Pepper, and Grade W320 Cashews from Pathanamthitta.</p>
+    <div class="hero-content">
+        <h1>Global Partner for <br>Premium Spices</h1>
+        <p>Leading Exporter of Organic Cardamom, Black Pepper, and Cashews from India.</p>
+        <a href="#products" class="btn-gold">VIEW PRODUCTS</a>
+    </div>
 </section>
 
-<div class="container">
+<section class="section">
+    <div class="about-row">
+        <div class="about-text">
+            <h2 style="color: var(--primary-color);">Your Trusted Partner in Global Trade</h2>
+            <p>PS EXIM TRADERS is a premier export company based in Kerala, the land of spices. We specialize in providing the highest grade agricultural products to international markets, ensuring quality control from farm to container.</p>
+            <p>With a focus on sustainability and direct sourcing, we bridge the gap between Indian farmers and global buyers.</p>
+            <a href="#" class="btn-gold" style="display:inline-block; margin-top:10px;">READ MORE</a>
+        </div>
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1533613220915-609f661a6fe1?auto=format&fit=crop&w=800&q=80" alt="Spice Export">
+        </div>
+    </div>
+</section>
+
+<section class="section" id="products" style="background: var(--light-gray);">
     <div class="section-title">
-        <h2>Export Quality Products</h2>
-        <p>Sourced directly from the farms of Kerala</p>
+        <h2>OUR MAIN PRODUCTS</h2>
+        <p>Export Quality - Certified Organic</p>
     </div>
     
-    <div class="grid">
-        <div class="card">
-            <img src="cashew.jpg" alt="Cashews">
-            <h3>Premium Cashew Nuts</h3>
-            <p>Grade W320 & W240. Hand-picked, crunchy, and organic.</p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hi, I want to enquire about Cashew prices." class="btn-enquire">ENQUIRE NOW</a>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="cashew.jpg" alt="Cashew Nuts">
+            <h3>CASHEW NUTS</h3>
+            <p style="padding: 10px;">Premium W320 & W240 Grades</p>
+            <a href="https://wa.me/91XXXXXXXX?text=Quote for Cashews" class="btn-enquire">ENQUIRE NOW</a>
         </div>
-
-        <div class="card">
+        <div class="product-card">
             <img src="pepper.jpg" alt="Black Pepper">
-            <h3>Bold Black Pepper</h3>
-            <p>Original Malabar Black Pepper. Garbled quality with high piperine.</p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hi, I want to enquire about Black Pepper prices." class="btn-enquire">ENQUIRE NOW</a>
+            <h3>BLACK PEPPER</h3>
+            <p style="padding: 10px;">Malabar Bold - High Piperine Content</p>
+            <a href="https://wa.me/91XXXXXXXX?text=Quote for Pepper" class="btn-enquire">ENQUIRE NOW</a>
         </div>
-
-        <div class="card">
-            <img src="cardamom.jpg" alt="Cardamom">
-            <h3>Organic Green Cardamom</h3>
-            <p>8mm+ Bold Pods. Intense aroma and vibrant green color.</p>
-            <a href="https://wa.me/91XXXXXXXXXX?text=Hi, I want to enquire about Cardamom prices." class="btn-enquire">ENQUIRE NOW</a>
+        <div class="product-card">
+            <img src="cardamom.jpg" alt="Green Cardamom">
+            <h3>GREEN CARDAMOM</h3>
+            <p style="padding: 10px;">8mm+ Export Quality Green Pods</p>
+            <a href="https://wa.me/91XXXXXXXX?text=Quote for Cardamom" class="btn-enquire">ENQUIRE NOW</a>
         </div>
     </div>
-</div>
+</section>
 
 <footer>
     <div class="footer-grid">
         <div>
-            <span class="footer-logo">PS EXIM TRADERS</span>
-            <p><b>Address:</b><br>
-            5/106, Nandanam, Eravichira East,<br>
-            Sooranad South, Pathanamthitta,<br>
-            Kerala, India - 690522</p>
+            <span class="footer-logo">PS EXIM <span>TRADERS</span></span>
+            <p>Exporting the finest Kerala spices to the Middle East, Europe, and Asia. Committed to quality and on-time delivery.</p>
+        </div>
+        <div class="footer-links">
+            <h3>QUICK LINKS</h3>
+            <a href="#">About Us</a>
+            <a href="#">Our Products</a>
+            <a href="#">Certifications</a>
+            <a href="#">Privacy Policy</a>
         </div>
         <div>
-            <h3>Contact Details</h3>
-            <p><b>CEO:</b> Akshay Ajith</p>
-            <p><b>Email:</b> info@pseximtraders.com</p>
-            <p><b>GST:</b> 32DKKPA8232B1ZQ</p>
+            <h3>CONTACT US</h3>
+            <p>5/106, Nandanam, Eravichira East,<br>Sooranad South, Pathanamthitta, Kerala.</p>
+            <p>Email: info@pseximtraders.com</p>
         </div>
     </div>
-    <hr style="opacity: 0.1; margin: 30px 0;">
-    <p style="text-align: center; font-size: 13px; opacity: 0.6;">© 2026 PS EXIM TRADERS. All Rights Reserved.</p>
+    <p style="text-align: center; margin-top: 40px; border-top: 1px solid #ffffff22; padding-top: 20px;">Copyright 2026 © PS EXIM TRADERS. All Rights Reserved.</p>
 </footer>
+
+<a href="https://wa.me/91XXXXXXXX" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
