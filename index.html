@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PS EXIM TRADERS | Premium Agricultural Exports</title>
+    <title>PS EXIM TRADERS | Global Multi-Commodity Sourcing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -15,7 +15,6 @@
 
         body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--text-dark); overflow-x: hidden; }
 
-        /* Navigation */
         header { background: #fff; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 24px; font-weight: 800; color: var(--primary-color); text-transform: uppercase; }
         .logo span { color: var(--accent-color); }
@@ -23,8 +22,7 @@
         nav ul li { margin-left: 30px; }
         nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 14px; }
 
-        /* Slider Styles */
-        .hero-slider { position: relative; height: 70vh; overflow: hidden; background: #000; }
+        .hero-slider { position: relative; height: 75vh; overflow: hidden; background: #000; }
         .slide { 
             position: absolute; width: 100%; height: 100%; 
             background-size: cover; background-position: center; 
@@ -32,31 +30,29 @@
             opacity: 0; transition: opacity 1s ease-in-out; 
         }
         .slide.active { opacity: 1; z-index: 1; }
-        .hero-content { text-align: center; color: white; z-index: 2; padding: 0 20px; }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
+        .hero-content { text-align: center; color: white; z-index: 2; padding: 0 20px; max-width: 800px; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; text-transform: uppercase; line-height: 1.1; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 25px; }
+
+        .section { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 32px; color: var(--primary-color); text-transform: uppercase; }
         
-        /* Product Grid */
-        .section { padding: 60px 10%; }
-        .section-title { text-align: center; margin-bottom: 40px; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
         .product-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; background: #fff; transition: 0.3s; }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: 200px; object-fit: cover; }
-        .product-card h3 { margin: 15px 0; color: var(--primary-color); }
-        .btn-enquire { display: block; background: var(--primary-color); color: white; padding: 12px; text-decoration: none; font-weight: bold; }
+        .product-card img { width: 100%; height: 220px; object-fit: cover; }
+        .product-card h3 { margin: 15px 0; color: var(--primary-color); font-size: 1.2rem; }
+        .btn-enquire { display: block; background: var(--primary-color); color: white; padding: 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 13px; }
         .btn-enquire:hover { background: var(--accent-color); }
 
-        /* About Section */
-        .about-container { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
-        .about-text { flex: 1; min-width: 300px; }
-        .about-img { flex: 1; min-width: 300px; }
-        .about-img img { width: 100%; border-radius: 10px; box-shadow: 10px 10px 0px var(--accent-color); }
+        .about-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 350px; }
+        .about-img { flex: 1; min-width: 350px; }
+        .about-img img { width: 100%; border-radius: 4px; box-shadow: 15px 15px 0px var(--accent-color); }
 
-        /* Footer */
-        footer { background: var(--primary-color); color: white; padding: 40px 10%; margin-top: 50px; }
-        
-        /* WhatsApp */
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); }
+        footer { background: var(--primary-color); color: white; padding: 50px 10%; text-align: center; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
@@ -66,24 +62,25 @@
     <nav>
         <ul>
             <li><a href="#">HOME</a></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="#products">PRODUCTS</a></li>
+            <li><a href="#about">WHO WE ARE</a></li>
+            <li><a href="#portfolio">CORE PORTFOLIO</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
 </header>
 
 <section class="hero-slider">
-    <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1920&q=80');">
+    <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');">
         <div class="hero-content">
-            <h1>Premium Spice Export</h1>
-            <p>Quality Cardamom, Pepper, and Cashews from India to the World.</p>
+            <h1>Global Sourcing <br>& Multi-Commodity Export</h1>
+            <p>Providing tailored procurement solutions across diverse industries based on specific client requirements.</p>
+            <a href="#portfolio" class="btn-enquire" style="display:inline-block; border-radius:5px; padding: 15px 40px;">Explore Our Services</a>
         </div>
     </div>
-    <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=1920&q=80');">
+    <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');">
         <div class="hero-content">
-            <h1>Global Trade Partner</h1>
-            <p>Reliable Supply Chain and Bulk Sourcing Solutions.</p>
+            <h1>Your Trusted <br>Strategic Trading Partner</h1>
+            <p>Connecting international buyers with premium Indian commodities and industrial goods through a seamless supply chain.</p>
         </div>
     </div>
 </section>
@@ -91,44 +88,53 @@
 <section id="about" class="section">
     <div class="about-container">
         <div class="about-text">
-            <h2 style="color: var(--primary-color);">About PS EXIM TRADERS</h2>
-            <p>We are a leading export house based in Kerala, specializing in premium agricultural commodities. Our mission is to bridge the gap between local farmers and global markets through quality assurance and transparent trade.</p>
-            <p>With direct sourcing from high-range plantations, we ensure our clients receive only the boldest pepper and the freshest cardamom.</p>
+            <h2 style="color: var(--primary-color);">Reliability in Every Shipment</h2>
+            <p>At <strong>PS EXIM TRADERS</strong>, we are more than just exporters; we are comprehensive sourcing partners. Based in Kerala, India, we leverage our vast network to procure a wide array of commodities—from premium agricultural produce to diverse industrial and consumer goods.</p>
+            <p>Our core strength lies in our flexibility. We don't just sell what we have; we source exactly what you need. By focusing on stringent quality control and efficient logistics, we ensure that every client requirement is met with precision and professionalism.</p>
         </div>
         <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=800&q=80" alt="Kerala Spices">
+            <img src="https://images.unsplash.com/photo-1494412574005-481327a17445?auto=format&fit=crop&w=800&q=80" alt="Shipping Containers">
         </div>
     </div>
 </section>
 
-<section id="products" class="section" style="background: var(--light-gray);">
+<section id="portfolio" class="section" style="background: var(--light-gray);">
     <div class="section-title">
-        <h2>Our Product Categories</h2>
+        <h2>Core Sourcing Portfolio</h2>
+        <p>Specialized procurement across multiple sectors</p>
     </div>
     <div class="product-grid">
         <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=500&q=80" alt="Spices">
+            <h3>Premium Spices</h3>
+            <p>Cardamom, Pepper & Turmeric</p>
+            <a href="https://wa.me/91XXXXXXXXXX" class="btn-enquire">Enquire Now</a>
+        </div>
+        <div class="product-card">
             <img src="https://images.unsplash.com/photo-1551462147-37885acc3c41?auto=format&fit=crop&w=500&q=80" alt="Cashews">
-            <h3>Cashew Nuts</h3>
-            <p>Premium W320/W240 Grades</p>
-            <a href="https://wa.me/91XXXXXXXXXX" class="btn-enquire">ENQUIRE NOW</a>
+            <h3>Nuts & Kernels</h3>
+            <p>Export Grade Cashews & More</p>
+            <a href="https://wa.me/91XXXXXXXXXX" class="btn-enquire">Enquire Now</a>
         </div>
         <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1615485500704-a1a9d2595c4e?auto=format&fit=crop&w=500&q=80" alt="Black Pepper">
-            <h3>Black Pepper</h3>
-            <p>Malabar Bold - High Oil Content</p>
-            <a href="https://wa.me/91XXXXXXXXXX" class="btn-enquire">ENQUIRE NOW</a>
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=500&q=80" alt="Industrial">
+            <h3>Industrial Goods</h3>
+            <p>Client-Specific Sourcing</p>
+            <a href="https://wa.me/91XXXXXXXXXX" class="btn-enquire">Enquire Now</a>
         </div>
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1634300310619-743997193297?auto=format&fit=crop&w=500&q=80" alt="Cardamom">
-            <h3>Green Cardamom</h3>
-            <p>8mm+ Export Grade Pods</p>
-            <a href="https://wa.me/91XXXXXXXXXX" class="btn-enquire">ENQUIRE NOW</a>
+        <div class="product-card" style="background: var(--primary-color); color: white;">
+            <div style="padding: 40px 20px;">
+                <i class="fas fa-search-plus" style="font-size: 3rem; margin-bottom: 20px; color: var(--accent-color);"></i>
+                <h3>Custom Procurement</h3>
+                <p>Have a specific requirement? We source any commodity based on your technical specifications.</p>
+                <a href="https://wa.me/91XXXXXXXXXX" class="btn-enquire" style="background: var(--accent-color); margin-top: 20px;">Contact Sourcing Team</a>
+            </div>
         </div>
     </div>
 </section>
 
 <footer id="contact">
-    <p style="text-align: center;">© 2026 PS EXIM TRADERS | Pathanamthitta, Kerala</p>
+    <p>© 2026 PS EXIM TRADERS | Pathanamthitta, Kerala, India <br> Serving Global Markets with Integrity.</p>
 </footer>
 
 <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float">
