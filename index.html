@@ -6,138 +6,146 @@
     <title>PS EXIM TRADERS | Global Multi-Commodity Sourcing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-       header {
-    background: #ffffff;
-    padding: 15px 5%;
-    display: flex;
-    align-items: center; /* Vertical alignment */
-    justify-content: flex-start; /* Horizontal alignment */
-    border-bottom: 4px solid #002D62;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        :root {
+            --primary-color: #002D62; /* Navy Blue */
+            --accent-color: #FFD700;  /* Gold */
+            --text-dark: #333;
+            --light-bg: #f8f9fa;
+        }
 
-.logo-box {
-    display: flex;
-    align-items: center;
-}
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--text-dark); overflow-x: hidden; }
 
-.logo-box img {
-    height: 110px; /* This makes the globe big and highlighted */
-    width: auto;
-    margin-right: 20px;
-}
+        /* HEADER: Logo on Left, Big Name on Right */
+        header {
+            background: #fff;
+            padding: 15px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 4px solid var(--primary-color);
+        }
 
-.brand-name {
-    font-size: 34px;
-    font-weight: 800;
-    color: #002D62;
-    text-transform: uppercase;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
+        .logo-section { display: flex; align-items: center; }
+        
+        /* Highlighting the Globe Logo */
+        .logo-section img {
+            height: 90px; /* Large professional size */
+            width: auto;
+            margin-right: 20px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .company-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* HERO SECTION (Large Banner) */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,45,98,0.7), rgba(0,45,98,0.7)), 
+                        url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h2 { font-size: 48px; margin-bottom: 10px; text-transform: uppercase; }
+        .hero p { font-size: 20px; max-width: 700px; color: var(--accent-color); }
+
+        /* MAIN CONTENT AREA */
+        .container { padding: 60px 8%; text-align: center; }
+        .section-title { font-size: 36px; color: var(--primary-color); margin-bottom: 40px; position: relative; }
+        .section-title::after { content: ''; width: 80px; height: 4px; background: var(--accent-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        /* PRODUCT GRID */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent-color); }
+        .card i { font-size: 50px; color: var(--primary-color); margin-bottom: 15px; }
+
+        /* FOOTER */
+        footer { background: var(--primary-color); color: white; padding: 40px 8%; display: flex; justify-content: space-between; flex-wrap: wrap; }
+        .footer-col { flex: 1; min-width: 250px; margin-bottom: 20px; }
+        .footer-col h4 { color: var(--accent-color); margin-bottom: 20px; }
+        .contact-item { margin-bottom: 10px; }
+        .contact-item i { margin-right: 10px; color: var(--accent-color); }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; padding: 10px; }
+            .logo-section { flex-direction: column; }
+            .logo-section img { margin-right: 0; margin-bottom: 10px; height: 70px; }
+            .company-title { font-size: 22px; }
+            .hero h2 { font-size: 30px; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-<div class="logo">
-<header>
-    <div class="logo-box">
-        <img src="logo.png.png" alt="PS EXIM TRADERS GLOBE">
-        <span class="brand-name">PS EXIM TRADERS</span>
-    </div>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#about">WHO WE ARE</a></li>
-            <li><a href="#portfolio">CORE PORTFOLIO</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <div class="logo-section">
+            <img src="logo.png.png" alt="PS EXIM TRADERS Globe">
+            <div class="company-title">PS EXIM TRADERS</div>
+        </div>
+    </header>
 
-<section class="hero-slider">
-    <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');">
-        <div class="hero-content">
-            <h1>Global Sourcing <br>& Multi-Commodity Export</h1>
-            <p>Providing tailored procurement solutions across diverse industries based on specific client requirements.</p>
-            <a href="#portfolio" class="btn-enquire" style="display:inline-block; border-radius:5px; padding: 15px 40px;">Explore Our Services</a>
-        </div>
-    </div>
-    <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');">
-        <div class="hero-content">
-            <h1>Your Trusted <br>Strategic Trading Partner</h1>
-            <p>Connecting international buyers with premium Indian commodities and industrial goods through a seamless supply chain.</p>
-        </div>
-    </div>
-</section>
+    <section class="hero">
+        <h2>Global Sourcing Excellence</h2>
+        <p>Premium Quality Commodities & Seamless Export Logistics</p>
+    </section>
 
-<section id="about" class="section">
-    <div class="about-container">
-        <div class="about-text">
-            <h2 style="color: var(--primary-color);">Reliability in Every Shipment</h2>
-            <p>At <strong>PS EXIM TRADERS</strong>, we are more than just exporters; we are comprehensive sourcing partners. Based in Kerala, India, we leverage our vast network to procure a wide array of commodities—from premium agricultural produce to diverse industrial and consumer goods.</p>
-            <p>Our core strength lies in our flexibility. We don't just sell what we have; we source exactly what you need. By focusing on stringent quality control and efficient logistics, we ensure that every client requirement is met with precision and professionalism.</p>
-        </div>
-        <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1524522173746-f628baad3644?auto=format&fit=crop&w=800&q=80" alt="Global Shipping Logistics">
-        </div>
-    </div>
-</section>
-
-<section id="portfolio" class="section" style="background: var(--light-gray);">
-    <div class="section-title">
-        <h2>Core Sourcing Portfolio</h2>
-        <p>Specialized procurement across multiple sectors</p>
-    </div>
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=500&q=80" alt="Spices">
-            <h3>Premium Spices</h3>
-            <p>Cardamom, Pepper & Turmeric</p>
-            <a href="https://wa.me/918086190827" class="btn-enquire">Enquire Now</a>
-        </div>
-   <div class="product-card">
-          <img src="images/cashew-premium.jpg" alt="Premium Export Quality Cashew Nuts">
-            <h3>Nuts & Kernels</h3>
-            <p>Export Grade Cashews & More</p>
-            <a href="https://wa.me/918086190827" class="btn-enquire">Enquire Now</a>
-        </div>
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Industrial Sourcing">
-            <h3>Industrial Goods</h3>
-            <p>Client-Specific Sourcing</p>
-            <a href="https://wa.me/918086190827" class="btn-enquire">Enquire Now</a>
-        </div>
-        <div class="product-card" style="background: var(--primary-color); color: white;">
-            <div style="padding: 40px 20px;">
-                <i class="fas fa-search-plus" style="font-size: 3rem; margin-bottom: 20px; color: var(--accent-color);"></i>
-                <h3>Custom Procurement</h3>
-                <p>Have a specific requirement? We source any commodity based on your technical specifications.</p>
-                <a href="https://wa.me/918086190827" class="btn-enquire" style="background: var(--accent-color); margin-top: 20px;">Contact Sourcing Team</a>
+    <div class="container">
+        <h3 class="section-title">Our Exclusive Services</h3>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-ship"></i>
+                <h3>Global Logistics</h3>
+                <p>Efficient international shipping and freight management for all commodities.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-box-open"></i>
+                <h3>Quality Sourcing</h3>
+                <p>Ensuring uncompromised food safety and premium product standards.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h3>Worldwide Export</h3>
+                <p>Connecting local producers to international markets across the globe.</p>
             </div>
         </div>
     </div>
-</section>
 
-<footer id="contact">
-    <p>© 2026 PS EXIM TRADERS | Kollam, Kerala, India <br> Serving Global Markets with Integrity.</p>
-</footer>
-
-<a href="https://wa.me/918086190827" class="whatsapp-float">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<script>
-    let slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-    function nextSlide() {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }
-    setInterval(nextSlide, 5000);
-</script>
+    <footer>
+        <div class="footer-col">
+            <h4>PS EXIM TRADERS</h4>
+            <p>Your trusted partner in the global FMCG and commodity trading industry.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <p>Home</p>
+            <p>Our Products</p>
+            <p>Logistics</p>
+            <p>Contact Us</p>
+        </div>
+        <div class="footer-col">
+            <h4>Get In Touch</h4>
+            <div class="contact-item"><i class="fas fa-phone"></i> +91 8086190827</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> info@pseximtraders.com</div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Ernakulam, Kerala, India</div>
+        </div>
+    </footer>
 
 </body>
 </html>
