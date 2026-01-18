@@ -6,73 +6,48 @@
     <title>PS EXIM TRADERS | Global Multi-Commodity Sourcing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #1a4332; 
-            --accent-color: #c5a059;  
-            --text-dark: #333;
-            --light-gray: #f4f4f4;
-        }
+       header {
+    background: #ffffff;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: flex-start; /* Horizontal alignment */
+    border-bottom: 4px solid #002D62;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: var(--text-dark); overflow-x: hidden; }
+.logo-box {
+    display: flex;
+    align-items: center;
+}
 
-        header { background: #fff; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .logo {
-                display: flex;
-                align-items: center;
-               }
+.logo-box img {
+    height: 110px; /* This makes the globe big and highlighted */
+    width: auto;
+    margin-right: 20px;
+}
 
-        .logo img {
-                     height: 55px;
-                      width: auto;
-                    }
-        .logo span { color: var(--accent-color); }
-        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
-        nav ul li { margin-left: 30px; }
-        nav ul li a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 14px; }
-
-        .hero-slider { position: relative; height: 75vh; overflow: hidden; background: #000; }
-        .slide { 
-            position: absolute; width: 100%; height: 100%; 
-            background-size: cover; background-position: center; 
-            display: flex; align-items: center; justify-content: center; 
-            opacity: 0; transition: opacity 1s ease-in-out; 
-        }
-        .slide.active { opacity: 1; z-index: 1; }
-        .hero-content { text-align: center; color: white; z-index: 2; padding: 0 20px; max-width: 800px; }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; text-transform: uppercase; line-height: 1.1; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 25px; }
-
-        .section { padding: 80px 10%; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 32px; color: var(--primary-color); text-transform: uppercase; }
-        
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .product-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; background: #fff; transition: 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: 220px; object-fit: cover; }
-        .product-card h3 { margin: 15px 0; color: var(--primary-color); font-size: 1.2rem; }
-        .btn-enquire { display: block; background: var(--primary-color); color: white; padding: 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 13px; }
-        .btn-enquire:hover { background: var(--accent-color); }
-
-        .about-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .about-text { flex: 1; min-width: 350px; }
-        .about-img { flex: 1; min-width: 350px; }
-        .about-img img { width: 100%; border-radius: 4px; box-shadow: 15px 15px 0px var(--accent-color); }
-
-        footer { background: var(--primary-color); color: white; padding: 50px 10%; text-align: center; }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.brand-name {
+    font-size: 34px;
+    font-weight: 800;
+    color: #002D62;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
     </style>
 </head>
 <body>
 
 <header>
 <div class="logo">
-  <a href="index.html">
-    <img src="logo.png" alt="PS EXIM TRADERS Logo" style="height: 120px; width: auto;">
-  </a>
-</div>
-    <nav>
-        <ul>
+<header>
+    <div class="logo-box">
+        <img src="logo.png.png" alt="PS EXIM TRADERS GLOBE">
+        <span class="brand-name">PS EXIM TRADERS</span>
+    </div>
             <li><a href="#">HOME</a></li>
             <li><a href="#about">WHO WE ARE</a></li>
             <li><a href="#portfolio">CORE PORTFOLIO</a></li>
