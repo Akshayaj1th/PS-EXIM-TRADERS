@@ -1,151 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PS EXIM TRADERS | Global Multi-Commodity Sourcing</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #002D62; /* Navy Blue */
-            --accent-color: #FFD700;  /* Gold */
-            --text-dark: #333;
-            --light-bg: #f8f9fa;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--text-dark); overflow-x: hidden; }
+<title>PS EXIM TRADERS | Global Multi-Commodity Exporter</title>
 
-        /* HEADER: Logo on Left, Big Name on Right */
-        header {
-            background: #fff;
-            padding: 15px 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid var(--primary-color);
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        .logo-section { display: flex; align-items: center; }
-        
-        /* Highlighting the Globe Logo */
-        .logo-section img {
-            height: 90px; /* Large professional size */
-            width: auto;
-            margin-right: 20px;
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
-        }
+<style>
+:root{
+  --primary:#1a4d2e;
+  --accent:#c9a24d;
+  --dark:#222;
+  --light:#f7f7f7;
+}
 
-        .company-title {
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
 
-        /* HERO SECTION (Large Banner) */
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,45,98,0.7), rgba(0,45,98,0.7)), 
-                        url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+  z-index:1000;
+}
 
-        .hero h2 { font-size: 48px; margin-bottom: 10px; text-transform: uppercase; }
-        .hero p { font-size: 20px; max-width: 700px; color: var(--accent-color); }
+.logo img{height:55px}
 
-        /* MAIN CONTENT AREA */
-        .container { padding: 60px 8%; text-align: center; }
-        .section-title { font-size: 36px; color: var(--primary-color); margin-bottom: 40px; position: relative; }
-        .section-title::after { content: ''; width: 80px; height: 4px; background: var(--accent-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+nav ul{list-style:none;display:flex}
+nav li{margin-left:30px}
+nav a{text-decoration:none;color:var(--dark);font-weight:600;font-size:14px}
 
-        /* PRODUCT GRID */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent-color); }
-        .card i { font-size: 50px; color: var(--primary-color); margin-bottom: 15px; }
+.hero{
+  height:85vh;
+  background:
+  linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+  url("https://images.unsplash.com/photo-1604908554168-6f8b1a4e09e5");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  padding:0 8%;
+  color:#fff;
+}
 
-        /* FOOTER */
-        footer { background: var(--primary-color); color: white; padding: 40px 8%; display: flex; justify-content: space-between; flex-wrap: wrap; }
-        .footer-col { flex: 1; min-width: 250px; margin-bottom: 20px; }
-        .footer-col h4 { color: var(--accent-color); margin-bottom: 20px; }
-        .contact-item { margin-bottom: 10px; }
-        .contact-item i { margin-right: 10px; color: var(--accent-color); }
+.hero h1{font-size:48px;margin-bottom:15px}
+.hero p{font-size:18px;margin-bottom:25px;max-width:600px}
+.hero a{
+  background:var(--accent);
+  color:#000;
+  padding:14px 30px;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:4px;
+}
 
-        @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; padding: 10px; }
-            .logo-section { flex-direction: column; }
-            .logo-section img { margin-right: 0; margin-bottom: 10px; height: 70px; }
-            .company-title { font-size: 22px; }
-            .hero h2 { font-size: 30px; }
-        }
-    </style>
+section{padding:70px 8%}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+.section-title h2{
+  font-size:36px;
+  color:var(--primary);
+}
+.section-title p{color:#666;margin-top:10px}
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about img{
+  width:100%;
+  border-radius:8px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.product{
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+  overflow:hidden;
+}
+
+.product img{width:100%;height:200px;object-fit:cover}
+.product div{padding:20px}
+.product h3{color:var(--primary)}
+
+.why{
+  background:var(--light);
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.why-box{
+  background:#fff;
+  padding:30px;
+  text-align:center;
+  border-radius:8px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.why-box i{
+  font-size:40px;
+  color:var(--accent);
+  margin-bottom:15px;
+}
+
+.contact{
+  background:var(--primary);
+  color:#fff;
+  text-align:center;
+}
+
+.contact a{
+  display:inline-block;
+  margin-top:20px;
+  background:#25d366;
+  color:#fff;
+  padding:15px 30px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .about{grid-template-columns:1fr}
+  nav ul{display:none}
+  .hero h1{font-size:36px}
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <div class="logo-section">
-            <img src="logo.png.png" alt="PS EXIM TRADERS Globe">
-            <div class="company-title">PS EXIM TRADERS</div>
-        </div>
-    </header>
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="PS EXIM TRADERS Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section class="hero">
-        <h2>Global Sourcing Excellence</h2>
-        <p>Premium Quality Commodities & Seamless Export Logistics</p>
-    </section>
+<section class="hero">
+  <div>
+    <h1>Global Multi-Commodity Exporters</h1>
+    <p>Supplying premium quality cashew nuts and spices to international markets with trust and consistency.</p>
+    <a href="#contact">Get in Touch</a>
+  </div>
+</section>
 
-    <div class="container">
-        <h3 class="section-title">Our Exclusive Services</h3>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-ship"></i>
-                <h3>Global Logistics</h3>
-                <p>Efficient international shipping and freight management for all commodities.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-box-open"></i>
-                <h3>Quality Sourcing</h3>
-                <p>Ensuring uncompromised food safety and premium product standards.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-globe"></i>
-                <h3>Worldwide Export</h3>
-                <p>Connecting local producers to international markets across the globe.</p>
-            </div>
-        </div>
+<section id="about">
+  <div class="section-title">
+    <h2>About Us</h2>
+    <p>Who we are</p>
+  </div>
+
+  <div class="about">
+    <div>
+      <p>
+        PS EXIM TRADERS is a trusted exporter of premium agricultural commodities.
+        We specialize in cashew nuts and Indian spices, delivering consistent quality
+        and competitive pricing across global markets.
+      </p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1604908177225-44d9e2ccff5f">
+  </div>
+</section>
+
+<section id="products">
+  <div class="section-title">
+    <h2>Our Products</h2>
+    <p>Premium export quality</p>
+  </div>
+
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1604908177225-44d9e2ccff5f">
+      <div>
+        <h3>Cashew Nuts</h3>
+        <p>W240, W320, W450 export grades</p>
+      </div>
     </div>
 
-    <footer>
-        <div class="footer-col">
-            <h4>PS EXIM TRADERS</h4>
-            <p>Your trusted partner in the global FMCG and commodity trading industry.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <p>Home</p>
-            <p>Our Products</p>
-            <p>Logistics</p>
-            <p>Contact Us</p>
-        </div>
-        <div class="footer-col">
-            <h4>Get In Touch</h4>
-            <div class="contact-item"><i class="fas fa-phone"></i> +91 8086190827</div>
-            <div class="contact-item"><i class="fas fa-envelope"></i> info@pseximtraders.com</div>
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Ernakulam, Kerala, India</div>
-        </div>
-    </footer>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5">
+      <div>
+        <h3>Black Pepper</h3>
+        <p>Bold, aromatic and high pungency</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1628591807935-31c7b5fa8a2a">
+      <div>
+        <h3>Cardamom</h3>
+        <p>Green cardamom – export grade</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="section-title">
+    <h2>Why Choose Us</h2>
+    <p>Our strengths</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-box">
+      <i class="fa-solid fa-star"></i>
+      <h3>Premium Quality</h3>
+      <p>Strict quality control standards</p>
+    </div>
+
+    <div class="why-box">
+      <i class="fa-solid fa-globe"></i>
+      <h3>Global Reach</h3>
+      <p>Serving buyers worldwide</p>
+    </div>
+
+    <div class="why-box">
+      <i class="fa-solid fa-handshake"></i>
+      <h3>Trusted Partner</h3>
+      <p>Long-term business relationships</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Get in touch for export inquiries</p>
+
+  <p><strong>Phone:</strong> +91 8086190827</p>
+  <p><strong>Email:</strong> pseximtraders@gmail.com</p>
+
+  <a href="https://wa.me/918086190827" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+  </a>
+</section>
+
+<footer>
+  © 2026 PS EXIM TRADERS. All Rights Reserved.
+</footer>
 
 </body>
 </html>
