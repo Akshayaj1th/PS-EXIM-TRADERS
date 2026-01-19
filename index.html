@@ -10,17 +10,15 @@
             --primary: #1a4d2e;
             --accent: #c9a24d;
             --dark: #222;
-            --light: #f7f7f7;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
-        /* HEADER: Matches globalexporters.in style */
         header {
             position: sticky;
             top: 0;
             background: #fff;
-            padding: 10px 8%;
+            padding: 15px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -29,20 +27,16 @@
             border-bottom: 4px solid var(--primary);
         }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
+        .brand-container { display: flex; align-items: center; text-decoration: none; }
+        
         .brand-container img {
-            height: 80px; /* Highlights the globe portion */
+            height: 90px; /* Large professional size */
             width: auto;
-            margin-right: 50px;
+            margin-right: 15px;
         }
 
         .brand-name {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
             color: var(--primary);
             text-transform: uppercase;
@@ -50,106 +44,87 @@
 
         nav ul { list-style: none; display: flex; }
         nav ul li { margin-left: 30px; }
-        nav ul li a { text-decoration: none; color: var(--dark); font-weight: 600; transition: 0.3s; }
-        nav ul li a:hover { color: var(--primary); }
+        nav ul li a { text-decoration: none; color: var(--dark); font-weight: 600; }
 
-        /* HERO SECTION: Fixed background image */
-       .hero {
-       height: 80vh; /* This gives the section height so the image can show */
-        display: flex;
-        align-items: center;
-         padding: 0 8%;
-      /* This combines the dark overlay and the image */
-         background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1604908554168-6f8b1a4e09e5?auto=format&fit=crop&w=1600&q=80');
-         background-size: cover;
-        background-position: center;
-        color: white;
-}
+        /* HERO SECTION */
+        .hero {
+            height: 85vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            /* Fixed background path and settings */
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
 
-        .hero-content { max-width: 700px; }
-        .hero-content h1 { font-size: 50px; line-height: 1.1; margin-bottom: 20px; }
-        .hero-content p { font-size: 18px; margin-bottom: 30px; color: #eee; }
+        .hero-content { max-width: 750px; }
+        .hero-content h1 { font-size: 52px; margin-bottom: 20px; line-height: 1.1; }
+        .hero-content p { font-size: 19px; margin-bottom: 30px; color: #f0f0f0; }
 
         .btn { padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; transition: 0.3s; }
         .primary-btn { background: var(--primary); color: white; margin-right: 15px; }
         .secondary-btn { border: 2px solid white; color: white; }
-        .primary-btn:hover { background: var(--accent); }
 
         section { padding: 80px 8%; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 36px; color: var(--primary); text-transform: uppercase; }
-
-        /* Product Grid */
         .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .product { background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; text-align: center; }
         .product img { width: 100%; height: 250px; object-fit: cover; }
-        .product-info { padding: 25px; }
-        .product-info h3 { margin-bottom: 10px; color: var(--primary); }
+        .product-info { padding: 20px; }
 
-        /* Footer */
-        footer { background: #111; color: #888; text-align: center; padding: 30px; border-top: 5px solid var(--primary); }
-
-        @media (max-width: 768px) {
-            header { flex-direction: column; padding: 20px; }
-            .brand-container { margin-bottom: 15px; }
-            nav ul li { margin: 0 10px; }
-            .hero-content h1 { font-size: 32px; }
-        }
+        footer { background: #111; color: white; text-align: center; padding: 40px; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="brand-container">
-            <img src="logo.png" alt="PS EXIM TRADERS Globe">
+            <img src="logo.png" alt="PS EXIM TRADERS Logo">
             <span class="brand-name">PS EXIM TRADERS</span>
         </div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-  <section class="hero">
-    <div class="hero-content">
-        <h1>Global Exporters of Cashew Nuts & Spices</h1>
-        <p>PS Exim Traders is a trusted Indian exporter supplying premium quality cashew nuts, cardamom, and black pepper to international markets.</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn primary-btn">Get a Quote</a>
-            <a href="#products" class="btn secondary-btn">Our Products</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Global Exporters of Premium Cashews & Spices</h1>
+            <p>Trust, Quality, and Excellence. Delivering the finest agricultural commodities from India to the world.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/918086190827" class="btn primary-btn">WhatsApp Us</a>
+                <a href="#products" class="btn secondary-btn">Our Products</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="products">
-        <div class="section-title">
-            <h2>Our Premium Products</h2>
-            <p>Directly sourced and quality tested for international standards</p>
-        </div>
         <div class="products">
             <div class="product">
                 <img src="https://images.unsplash.com/photo-1604908177225-44d9e2ccff5f" alt="Cashews">
-                <div class="product-info"><h3>Premium Cashew Nuts</h3><p>Export Grades: W180, W210, W240</p></div>
+                <div class="product-info"><h3>Cashew Nuts</h3><p>Export Grades: W180, W210, W240</p></div>
             </div>
             <div class="product">
                 <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5" alt="Black Pepper">
-                <div class="product-info"><h3>Bold Black Pepper</h3><p>Aromatic and high pungency spices</p></div>
+                <div class="product-info"><h3>Black Pepper</h3><p>Bold & Aromatic Spices</p></div>
             </div>
             <div class="product">
                 <img src="https://images.unsplash.com/photo-1628591807935-31c7b5fa8a2a" alt="Cardamom">
-                <div class="product-info"><h3>Green Cardamom</h3><p>Hand-picked premium quality pods</p></div>
+                <div class="product-info"><h3>Green Cardamom</h3><p>Premium Quality Pods</p></div>
             </div>
         </div>
     </section>
 
     <footer id="contact">
         <p><strong>PS EXIM TRADERS</strong> | Phone: +91 8086190827 | Email: pseximtraders@gmail.com</p>
-        <p style="margin-top: 10px;">&copy; 2026 All Rights Reserved.</p>
     </footer>
 
 </body>
