@@ -9,221 +9,37 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root{
-  --primary:#1a4d2e;
-  --accent:#c9a24d;
-  --dark:#222;
-  --light:#f7f7f7;
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 10px 8%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+  z-index: 1000;
+  border-bottom: 4px solid var(--primary); 
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
-
-header{
-  position:sticky;
-  top:0;
-  background:#fff;
-  padding: 20px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 10px rgba(0,0,0,.1);
-  z-index:1000;
-}
-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
- background: linear-gradient(to right, var(--primary), var(--accent));
+.brand-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.logo img {
-  height: 85px;   /* increase logo size */
+.brand-container img {
+  height: 80px; /* This makes the globe big */
   width: auto;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+  margin-right: 15px;
 }
 
-nav ul li {
-  margin-left: 35px;
-}
-
-nav ul li a {
-  text-decoration: none;
- color: var(--dark);
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-   color: var(--primary);
- }
-
-.hero{
-  min-height:85vh;
-  display:flex;
-  align-items:center;
-  padding:0 8%;
-  color:#fff;
-
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("https://images.unsplash.com/photo-1604908554168-6f8b1a4e09e5?auto=format&fit=crop&w=1600&q=80");
-
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-}
-
-.hero-content {
-  text-align: left;
-  max-width: 650px;
-  color: #fff;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.hero-content p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 30px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.btn {
-  padding: 14px 28px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.primary-btn {
-  background: var(--primary);
-}
-.primary-btn:hover {
-  background: var(--accent);
-}
-.secondary-btn:hover {
+.brand-name {
+  font-size: 28px;
+  font-weight: 800;
   color: var(--primary);
-}
-
-section:not(.hero) {
-  padding:70px 8%;
-}
-.hero{
-  min-height:85vh;
-  background-repeat:no-repeat;
-}
-  .section-title{
-  text-align:center;
-  margin-bottom:40px;
-}
-.section-title h2{
-  font-size:36px;
-  color:var(--primary);
-}
-.section-title p{color:#666;margin-top:10px}
-
-.about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
-}
-
-.about img{
-  width:100%;
-  border-radius:8px;
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.product{
-  background:#fff;
-  border-radius:8px;
-  box-shadow:0 5px 15px rgba(0,0,0,.1);
-  overflow:hidden;
-}
-
-.product img{width:100%;height:200px;object-fit:cover}
-.product div{padding:20px}
-.product h3{color:var(--primary)}
-
-.why{
-  background:var(--light);
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-}
-
-.why-box{
-  background:#fff;
-  padding:30px;
-  text-align:center;
-  border-radius:8px;
-  box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.why-box i{
-  font-size:40px;
-  color:var(--accent);
-  margin-bottom:15px;
-}
-
-.contact{
-  background:var(--primary);
-  color:#fff;
-  text-align:center;
-}
-
-.contact a{
-  display:inline-block;
-  margin-top:20px;
-  background:#25d366;
-  color:#fff;
-  padding:15px 30px;
-  border-radius:5px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-footer{
-  background:#111;
-  color:#ccc;
-  text-align:center;
-  padding:20px;
-  font-size:14px;
-}
-
-@media(max-width:768px){
-  .about{grid-template-columns:1fr}
-  nav ul{display:none}
-  .hero h1{font-size:36px}
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 </style>
 </head>
@@ -231,8 +47,9 @@ footer{
 <body>
 
 <header>
-  <div class="logo">
-    <img src="logo.png" alt="PS EXIM TRADERS Logo">
+  <div class="brand-container">
+    <img src="logo.png.png" alt="PS EXIM TRADERS Globe">
+    <span class="brand-name">PS EXIM TRADERS</span>
   </div>
   <nav>
     <ul>
@@ -246,21 +63,15 @@ footer{
 </header>
 
 <section class="hero">
-  background-image:
-  linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-  url('https://images.unsplash.com/photo-1604908554168-6f8b1a4e09e5?auto=format&fit=crop&w=1600&q=80');
-">
-
   <div class="hero-content">
     <h1>Global Exporters of Cashew Nuts & Spices</h1>
     <p>
-      PS Exim Traders is a trusted Indian exporter supplying premium quality
+      PS EXIM TRADERS is a trusted Indian exporter supplying premium quality
       cashew nuts, cardamom, and black pepper to international markets.
     </p>
-
     <div class="hero-buttons">
-      <a href="#contact" class="btn primary-btn">Get a Quote</a>
-      <a href="#products" class="btn secondary-btn">Our Products</a>
+      <a href="#contact" class="btn primary-btn" style="color:white;">Get a Quote</a>
+      <a href="#products" class="btn secondary-btn" style="border: 1px solid white; color:white;">Our Products</a>
     </div>
   </div>
 </section>
