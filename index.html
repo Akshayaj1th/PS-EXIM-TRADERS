@@ -79,6 +79,56 @@ nav ul li a:hover {
   padding:0 8%;
   color:#fff;
 }
+.hero-content {
+  text-align: left;
+  max-width: 650px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.primary-btn:hover {
+  background: var(--accent-color);
+}
+
+.secondary-btn {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.secondary-btn:hover {
+  background: #fff;
+  color: var(--primary-color);
+}
 
 .hero h1{font-size:48px;margin-bottom:15px}
 .hero p{font-size:18px;margin-bottom:25px;max-width:600px}
@@ -206,11 +256,20 @@ footer{
   </nav>
 </header>
 
-<section class="hero">
-  <div>
-    <h1>Global Multi-Commodity Exporters</h1>
-    <p>Supplying premium quality cashew nuts and spices to international markets with trust and consistency.</p>
-    <a href="#contact">Get in Touch</a>
+<section class="hero-slider">
+  <div class="slide active">
+    <div class="hero-content">
+      <h1>Global Exporters of Cashew Nuts & Spices</h1>
+      <p>
+        PS Exim Traders is a trusted Indian exporter supplying premium quality
+        cashew nuts, cardamom, and black pepper to international markets.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn primary-btn">Get a Quote</a>
+        <a href="#portfolio" class="btn secondary-btn">Our Products</a>
+      </div>
+    </div>
   </div>
 </section>
 
