@@ -279,7 +279,7 @@ function createRoute(lat1, lon1, lat2, lon2) {
   const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
   const material = new THREE.LineBasicMaterial({
-    color: 0xffaa33
+    color: 0xffaa33,
     transparent: true,
     opacity: 0.8
   });
