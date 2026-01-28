@@ -235,9 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const textureLoader = new THREE.TextureLoader();
 
   const material = new THREE.MeshStandardMaterial({
-    map: textureLoader.load(
-      'https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg'
-    )
+    map: textureLoader.load('https://www.solarsystemscope.com/textures/download/8k_earth_nightmap.jpg')
   });
 
   const globe = new THREE.Mesh(geometry, material);
