@@ -97,6 +97,26 @@
             nav ul { margin-top: 15px; }
             .hero-content h1 { font-size: 32px; }
         }
+        @keyframes spinGlobe {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+         .globe-container {
+            font-size: 80px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: spinGlobe 12s linear infinite; 
+        }
+        .about-content {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s ease-out;
+        }
+        .about-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -127,12 +147,19 @@
         </div>
     </section>
 
-    <section id="about" style="background: var(--light);">
+  <section id="about" style="background: var(--light); overflow: hidden;">
         <div class="section-title">
             <h2>About Us</h2>
         </div>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8; color: #444;">
-            <p>PS EXIM TRADERS is a premier merchant exporter specializing in high-quality agricultural commodities. Based in the fertile regions of India, we bridge the gap between local producers and international buyers, ensuring strict quality control and seamless logistics for every client.</p>
+        <div class="about-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <div class="globe-container">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+            <p style="line-height: 1.8; color: #444; font-size: 18px;">
+                PS EXIM TRADERS is a premier merchant exporter specializing in high-quality agricultural commodities. 
+                Based in the fertile regions of India, we bridge the gap between local producers and international buyers, 
+                ensuring strict quality control and seamless logistics for every global client.
+            </p>
         </div>
     </section>
 
@@ -189,6 +216,16 @@
         </div>
         <p style="border-top: 1px solid #333; padding-top: 20px; font-size: 14px; color: #777;">&copy; 2026 PS EXIM TRADERS. All Rights Reserved.</p>
     </footer>
+<script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
 
+        observer.observe(document.querySelector('.about-content'));
+    </script>
 </body>
 </html>
