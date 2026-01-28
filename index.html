@@ -109,7 +109,7 @@
 }
       .about-content {
             opacity: 1;
-            transform: translateY(40px);
+            transform: translateY(0px);
             transition: all 1.2s ease-out;
         }
         .about-content.visible {
@@ -239,24 +239,52 @@ const material = new THREE.MeshPhongMaterial({
   shininess: 50
   });
 
-  const globe = new THREE.Mesh(geometry, material);
-  scene.add(globe);
+const globe = new THREE.Mesh(geometry, material);
+scene.add(globe);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-  scene.add(ambientLight);
-
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-  directionalLight.position.set(5, 3, 5);
-  scene.add(directionalLight);
-
-  function animate() {
-    requestAnimationFrame(animate);
-    globe.rotation.y += 0.002;
-    renderer.render(scene, camera);
-  }
-
-  animate();
+/* Atmosphere */
+const atmosphereGeometry = new THREE.SphereGeometry(1.55, 64, 64);
+const atmosphereMaterial = new THREE.MeshBasicMaterial({
+  color: 0x4da6ff,
+  transparent: true,
+  opacity: 0.15,
 });
+const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
+scene.add(atmosphere);
+
+/* Lights */
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(5, 3, 5);
+scene.add(directionalLight);
+
+/* Animation */
+function animate() {
+  requestAnimationFrame(animate);
+
+  globe.rotation.y += 0.0015;
+  globe.rotation.x = 0.15;
+
+  atmosphere.rotation.y += 0.0015; 
+
+  renderer.render(scene, camera);
+}
+
+animate();
+});
+</script>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
+
+document.querySelectorAll(".about-content").forEach(el => observer.observe(el));
 </script>
 
 </body>
