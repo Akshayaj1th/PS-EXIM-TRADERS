@@ -253,7 +253,7 @@ const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
 scene.add(atmosphere);
 // ===== EXPORT ROUTES =====
 function createRoute(lat1, lon1, lat2, lon2) {
-  const radius = 1.52;
+  const radius = 1.58;
 
   function latLonToVector3(lat, lon, r) {
     const phi = (90 - lat) * (Math.PI / 180);
@@ -279,7 +279,7 @@ function createRoute(lat1, lon1, lat2, lon2) {
   const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
   const material = new THREE.LineBasicMaterial({
-    color: 0xffaa33,
+    color: 0xffaa33
     transparent: true,
     opacity: 0.8
   });
@@ -287,8 +287,6 @@ function createRoute(lat1, lon1, lat2, lon2) {
   const line = new THREE.Line(geometry, material);
   scene.add(line);
 }
-
-// India → Global routes
 createRoute(20.5937, 78.9629, 37.0902, -95.7129); // USA
 createRoute(20.5937, 78.9629, 48.8566, 2.3522);  // Europe
 createRoute(20.5937, 78.9629, 25.2048, 55.2708); // Middle East
