@@ -116,6 +116,62 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* ===== PRODUCT SECTION ===== */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.product-info h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+/* Tag badge */
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 20px;
+}
+
+/* Hover animation */
+.product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
     </style>
 </head>
 <body>
@@ -179,26 +235,41 @@
             </div>
         </div>
     </section>
+<section id="products" style="background: var(--light);">
+  <div class="section-title">
+    <h2>Our Products</h2>
+  </div>
 
-    <section id="products" style="background: var(--light);">
-        <div class="section-title">
-            <h2>Our Products</h2>
-        </div>
-        <div class="products">
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1604908177225-44d9e2ccff5f" alt="Cashews">
-                <div class="product-info"><h3>Cashew Nuts</h3><p>Grades: W180, W210, W240, W320</p></div>
-            </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5" alt="Black Pepper">
-                <div class="product-info"><h3>Black Pepper</h3><p>Bold, Aromatic, and High Pungency</p></div>
-            </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1628591807935-31c7b5fa8a2a" alt="Cardamom">
-                <div class="product-info"><h3>Green Cardamom</h3><p>Premium 7mm-8mm Export Quality</p></div>
-            </div>
-        </div>
-    </section>
+  <div class="products">
+    <!-- Cashew -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1604908177225-44d9e2ccff5f" alt="Cashew Nuts">
+      <div class="product-info">
+        <h3>Cashew Nuts</h3>
+        <p>Export grades: W180, W210, W240, W320</p>
+        <span class="tag">Premium Export</span>
+      </div>
+    </div>
+   <!-- Black Pepper -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5" alt="Black Pepper">
+      <div class="product-info">
+        <h3>Black Pepper</h3>
+        <p>Bold aroma, high pungency, export quality</p>
+        <span class="tag">Spice Grade</span>
+      </div>
+    </div>
+    <!-- Cardamom -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1628591807935-31c7b5fa8a2a" alt="Cardamom">
+      <div class="product-info">
+        <h3>Green Cardamom</h3>
+        <p>Premium 7mm–8mm sorted cardamom</p>
+        <span class="tag">Elite Quality</span>
+      </div>
+    </div>
+  </div>
+</section>
 
     <a href="https://wa.me/918086190827" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
