@@ -215,96 +215,73 @@
     </footer>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById('globe-container');
+  const container = document.getElementById("globe-container");
 
   const scene = new THREE.Scene();
+
   const camera = new THREE.PerspectiveCamera(
     45,
     container.clientWidth / container.clientHeight,
     0.1,
     1000
   );
+  camera.position.z = 4;
 
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
   container.appendChild(renderer.domElement);
 
-  camera.position.z = 4;
-
+  /* Globe */
   const geometry = new THREE.SphereGeometry(1.5, 64, 64);
   const textureLoader = new THREE.TextureLoader();
 
-const material = new THREE.MeshPhongMaterial({
-  map: textureLoader.load(  "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg" ),
-  shininess: 15
-});
+  const material = new THREE.MeshPhongMaterial({
+    map: textureLoader.load(
+      "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
+    ),
+    shininess: 15
+  });
 
+  const globe = new THREE.Mesh(geometry, material);
+  scene.add(globe);
 
-const globe = new THREE.Mesh(geometry, material);
-scene.add(globe);
-
-/* Atmosphere */
-const atmosphereGeometry = new THREE.SphereGeometry(1.55, 64, 64);
-const atmosphereMaterial = new THREE.MeshBasicMaterial({
-  color: 0x4da6ff,
-  transparent: true,
-  opacity: 0.15,
-});
-const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
-scene.add(atmosphere);
-
-  const start = latLonToVector3(lat1, lon1, radius);
-  const end = latLonToVector3(lat2, lon2, radius);
-
-  const curve = new THREE.QuadraticBezierCurve3(
-    start,
-    start.clone().multiplyScalar(1.45),
-    end
+  /* Atmosphere glow */
+  const atmosphere = new THREE.Mesh(
+    new THREE.SphereGeometry(1.55, 64, 64),
+    new THREE.MeshBasicMaterial({
+      color: 0x4da6ff,
+      transparent: true,
+      opacity: 0.15
+    })
   );
+  scene.add(atmosphere);
 
-  const points = curve.getPoints(50);
-  const geometry = new THREE.BufferGeometry().setFromPoints(points);
+  /* Lights */
+  scene.add(new THREE.AmbientLight(0xffffff, 0.6));
 
- const material = new THREE.LineBasicMaterial({
-  color: 0xffaa33,
-  transparent: true,
-  opacity: 0.9,
-  depthTest: false
-});
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(5, 3, 5);
+  scene.add(light);
 
-/* Lights */
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-scene.add(ambientLight);
+  /* Animate */
+  function animate() {
+    requestAnimationFrame(animate);
+    globe.rotation.y += 0.0015;
+    globe.rotation.x = 0.15;
+    atmosphere.rotation.y += 0.0015;
+    renderer.render(scene, camera);
+  }
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(5, 3, 5);
-scene.add(directionalLight);
+  animate();
 
-/* Animation */
-function animate() {
-  requestAnimationFrame(animate);
-
-  globe.rotation.y += 0.0015;
-  globe.rotation.x = 0.15;
-
-  atmosphere.rotation.y += 0.0015; 
-
-  renderer.render(scene, camera);
-}
-
-animate();
-});
-</script>
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
+  /* Resize fix */
+  window.addEventListener("resize", () => {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
   });
 });
-
-document.querySelectorAll(".about-content").forEach(el => observer.observe(el));
 </script>
 
 </body>
