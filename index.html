@@ -285,14 +285,6 @@ function createRoute(lat1, lon1, lat2, lon2) {
   opacity: 0.9,
   depthTest: false
 });
- const line = new THREE.Line(geometry, material);
-  line.renderOrder = 10; 
-    scene.add(line);
-}
-createRoute(20.5937, 78.9629, 37.0902, -95.7129); // USA
-createRoute(20.5937, 78.9629, 48.8566, 2.3522);  // Europe
-createRoute(20.5937, 78.9629, 25.2048, 55.2708); // Middle East
-createRoute(20.5937, 78.9629, 1.3521, 103.8198); // SE Asia
 
 /* Lights */
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
